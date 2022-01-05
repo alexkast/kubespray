@@ -4,7 +4,7 @@
 #   - registry: 10.0.0.2:5000
 #     username: user
 #     password: pass
-crio_registries_mirrors:
+crio_registries:
   - prefix: docker.io
     insecure: false
     blocked: false
