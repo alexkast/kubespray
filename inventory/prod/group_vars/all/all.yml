@@ -2,12 +2,6 @@
 # min supported kube_version
 # kube_version_min_required: v1.18.0
 
-## Directory where etcd data stored
-etcd_data_dir: /var/lib/etcd
-
-## Experimental kubeadm etcd deployment mode. Available only for new deployment
-etcd_kubeadm_enabled: false
-
 ## Directory where the binaries will be installed
 bin_dir: /usr/local/bin
 
@@ -17,7 +11,6 @@ bin_dir: /usr/local/bin
 ## environments where the nodes are accessed remotely by the "public" ip,
 ## but don't know about that address themselves.
 # access_ip: 1.1.1.1
-
 
 ## External LB example config
 ## apiserver_loadbalancer_domain_name: "elb.some.domain"
