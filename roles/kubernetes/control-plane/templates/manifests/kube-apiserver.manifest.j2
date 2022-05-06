@@ -127,6 +127,7 @@ spec:
 {% if kube_apiserver_feature_gates or kube_feature_gates %}
     - --feature-gates={{ kube_apiserver_feature_gates | default(kube_feature_gates, true) | join(',') }}
 {% endif %}
+    - --service-account-lookup={{ kube_apiserver_service_account_lookup }}
     - --requestheader-client-ca-file={{ kube_cert_dir }}/{{ kube_front_proxy_ca }}
     - --requestheader-allowed-names=front-proxy-client
     - --requestheader-extra-headers-prefix=X-Remote-Extra-
