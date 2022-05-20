@@ -31,10 +31,16 @@ Ansible v2.7.0 is failing and/or produce unexpected results due to [ansible/ansi
 
 #### Usage
 
+<<<<<<< HEAD
 ```ShellSession
 # Install dependencies from ``requirements.txt``
 sudo pip install -r requirements.txt
+=======
+Install Ansible according to [Ansible installation guide](/docs/ansible.md#installing-ansible)
+then run the following steps:
+>>>>>>> 0e6b727e5... Update docs for using venv (#8842)
 
+```ShellSession
 # Copy ``inventory/sample`` as ``inventory/mycluster``
 cp -rfp inventory/sample inventory/mycluster
 
@@ -87,10 +93,11 @@ python -V && pip -V
 ```
 
 If this returns the version of the software, you're good to go. If not, download and install Python from here <https://www.python.org/downloads/source/>
-Install the necessary requirements
+
+Install Ansible according to [Ansible installation guide](/docs/ansible.md#installing-ansible)
+then run the following step:
 
 ```ShellSession
-sudo pip install -r requirements.txt
 vagrant up
 ```
 
