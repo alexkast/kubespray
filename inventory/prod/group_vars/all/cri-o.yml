@@ -1,0 +1,16 @@
+# crio_insecure_registries:
+#   - 10.0.0.2:5000
+# crio_registry_auth:
+#   - registry: 10.0.0.2:5000
+#     username: user
+#     password: pass
+crio_registries_mirrors:
+  - prefix: docker.io
+    insecure: false
+    blocked: false
+    location: registry-1.docker.io
+    mirrors:
+      - location: 172.20.100.52:5000
+        insecure: true
+      - location: mirror.gcr.io
+        insecure: false
