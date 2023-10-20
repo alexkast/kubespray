@@ -25,6 +25,8 @@ spec:
         memory: {{ kube_controller_memory_requests }}
     command:
     - kube-controller-manager
+    - --authentication-kubeconfig={{ kube_config_dir }}/kube-controller-manager-kubeconfig.yaml
+    - --authorization-kubeconfig={{ kube_config_dir }}/kube-controller-manager-kubeconfig.yaml
     - --kubeconfig={{ kube_config_dir }}/kube-controller-manager-kubeconfig.yaml
     - --leader-elect=true
     - --leader-elect-lease-duration={{ kube_controller_manager_leader_elect_lease_duration }}
