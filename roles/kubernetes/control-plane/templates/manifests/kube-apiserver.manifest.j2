@@ -124,8 +124,8 @@ spec:
 {% if kube_encrypt_secret_data %}
     - --encryption-provider-config={{ kube_config_dir }}/ssl/secrets_encryption.yaml
 {% endif %}
-{% if kube_feature_gates %}
-    - --feature-gates={{ kube_feature_gates|join(',') }}
+{% if kube_apiserver_feature_gates or kube_feature_gates %}
+    - --feature-gates={{ kube_apiserver_feature_gates | default(kube_feature_gates, true) | join(',') }}
 {% endif %}
     - --requestheader-client-ca-file={{ kube_cert_dir }}/{{ kube_front_proxy_ca }}
     - --requestheader-allowed-names=front-proxy-client

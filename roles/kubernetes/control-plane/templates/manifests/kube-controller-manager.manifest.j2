@@ -61,8 +61,8 @@ spec:
     - --service-cluster-ip-range={{ kube_service_addresses }}
     - --node-cidr-mask-size={{ kube_network_node_prefix }}
 {% endif %}
-{% if kube_feature_gates %}
-    - --feature-gates={{ kube_feature_gates|join(',') }}
+{% if kube_controller_feature_gates or kube_feature_gates %}
+    - --feature-gates={{ kube_controller_feature_gates | default(kube_feature_gates, true) | join(',') }}
 {% endif %}
 {% if controller_mgr_custom_flags is string %}
     - {{ controller_mgr_custom_flags }}
