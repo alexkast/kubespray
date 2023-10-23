@@ -31,14 +31,8 @@ Ansible v2.7.0 is failing and/or produce unexpected results due to [ansible/ansi
 
 #### Usage
 
-<<<<<<< HEAD
-```ShellSession
-# Install dependencies from ``requirements.txt``
-sudo pip install -r requirements.txt
-=======
 Install Ansible according to [Ansible installation guide](/docs/ansible.md#installing-ansible)
 then run the following steps:
->>>>>>> 0e6b727e5... Update docs for using venv (#8842)
 
 ```ShellSession
 # Copy ``inventory/sample`` as ``inventory/mycluster``
